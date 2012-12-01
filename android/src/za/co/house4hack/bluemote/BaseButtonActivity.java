@@ -10,6 +10,7 @@ public abstract class BaseButtonActivity extends Activity {
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       Toast.makeText(this, "Button " + getButtonName() + " pressed", Toast.LENGTH_LONG).show();
+      finish();
    }
    
    public String getButtonName() {
