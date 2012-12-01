@@ -30,22 +30,22 @@
 
         <activity
             android:name=".Emergency"
-            android:label="@string/app_name" >
+            android:label="Emergency" >
         </activity>
         
         <activity
             android:name=".Crime"
-            android:label="@string/app_name" >
+            android:label="Crime" >
         </activity>
         
         <activity
             android:name=".Suspicious"
-            android:label="@string/app_name" >
+            android:label="Suspicious" >
         </activity>
 
         <activity
             android:name=".Other"
-            android:label="@string/app_name" >
+            android:label="Other" >
         </activity>
         
         <service android:name=".BluetoothService"/>
