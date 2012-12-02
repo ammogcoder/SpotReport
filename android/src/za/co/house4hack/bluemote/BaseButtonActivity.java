@@ -9,17 +9,13 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public abstract class BaseButtonActivity extends Activity
-{
+public abstract class BaseButtonActivity extends Activity {
    public static Boolean recording;
 
    @Override
-   protected void onCreate(Bundle savedInstanceState) 
-   {
+   protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.button_activity);
-
-     
 
       Toast.makeText(this, "Button " + getButtonName() + " pressed", Toast.LENGTH_LONG).show();
    }
@@ -27,31 +23,28 @@ public abstract class BaseButtonActivity extends Activity
    @Override
    protected void onStart() {
       super.onStart();
-      
+
       onButtonActivated();
    }
-   
+
    protected void onButtonActivated() {
       startVideoRecord();
       // startPhotoRecord();
       // startVoiceRecord();
    }
-   
-   private void startVoiceRecord() {
+
+   protected void startVoiceRecord() {
       BluMoteHandler.recordAudio(this);
    }
 
-   private void startVideoRecord() 
-   {
-   		Intent intent= new Intent();
-   		intent.setAction("com.android.camerarecorder.RECORD");
-    	intent.setPackage("com.android.camerarecorder");
-    	startActivity(intent);
-    	finish();
+   protected void startVideoRecord() {
+      Intent intent = new Intent();
+      intent.setAction("com.android.camerarecorder.RECORD");
+      intent.setPackage("com.android.camerarecorder");
+      startActivity(intent);
+      finish();
 
    }
-
- 
 
    public Location getBestLastKnownLoaction(Context context) {
       LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
@@ -64,6 +57,5 @@ public abstract class BaseButtonActivity extends Activity
    public String getButtonName() {
       return getClass().getName();
    }
-
 
 }
