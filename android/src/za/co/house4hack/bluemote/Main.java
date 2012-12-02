@@ -120,9 +120,6 @@ public class Main extends Activity {
     	  Log.e("MAIN", "Connecting to Ushahidi: " + ex.getMessage(), ex);
       }
       
-      //commented out by Donovan
-      /**
-      
       // Get local Bluetooth adapter
       mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -134,7 +131,6 @@ public class Main extends Activity {
       }
       
       if (mService == null) doBindService();
-      **/
    }
 
    @Override
