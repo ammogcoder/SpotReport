@@ -186,7 +186,7 @@ public class BluMoteHandler extends Handler {
       return retVal;
    }   
    
-   private void recordAudio(Context context) {
+   public static void recordAudio(Context context) {
       final MediaRecorder recorder = new MediaRecorder();
       try {
          recorder.setAudioSource(MediaRecorder.AudioSource.MIC);

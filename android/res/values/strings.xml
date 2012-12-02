@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">BluMote</string>
-    <string name="app_name">BluMote</string>
+    <string name="app_name">SpotReport</string>
 
     <string name="btn_connect">Connect</string>
     <string name="btn_disconnect">Exit</string>
     <string name="msg_scanning">Scanning for BluMotes...</string>
     <string name="msg_bt_not_enabled_leaving">Bluetooth not enabled, quitting</string>
+    <string name="act_crime">Crime</string>
+    <string name="act_emergency">Emergency</string>
+    <string name="act_other">Other</string>
+    <string name="act_suspicious">Suspicious</string>
 </resources>

@@ -38,7 +38,7 @@ import android.view.View;
 import android.widget.Toast;
 
 public class Main extends Activity {
-   private static final String BLUEMOTE_NAME_PREFIX = "BluMote";
+   private static final String BLUEMOTE_NAME_PREFIX = "BlueMote";
 
    // Debugging
    private static final String TAG = "BlueMote";
@@ -310,4 +310,23 @@ public class Main extends Activity {
       }
    };
 
+   public void onCrimeClick(View v) {
+      Intent i = new Intent(this, Crime.class);
+      startActivity(i);
+   }
+
+   public void onEmergencyClick(View v) {
+      Intent i = new Intent(this, Emergency.class);
+      startActivity(i);      
+   }
+
+   public void onSuspiciousClick(View v) {
+      Intent i = new Intent(this, Suspicious.class);
+      startActivity(i);      
+   }
+
+   public void onOtherClick(View v) {
+      Intent i = new Intent(this, Other.class);
+      startActivity(i);      
+   }
 }
