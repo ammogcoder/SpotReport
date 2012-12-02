@@ -34,7 +34,7 @@ import android.view.View;
 import android.widget.Toast;
 
 public class Main extends Activity {
-   private static final String BLUEMOTE_NAME_PREFIX = "BluMote";
+   private static final String BLUEMOTE_NAME_PREFIX = "BlueMote";
 
    // Debugging
    private static final String TAG = "BlueMote";
