@@ -26,10 +26,10 @@ public abstract class BaseButtonActivity extends Activity
 
    @Override
    protected void onStart() {
-      super.onStop();
+      super.onStart();
       startVideoRecord();
      // startPhotoRecord();
-      startVoiceRecord();
+     // startVoiceRecord();
    }
    
    private void startVoiceRecord() {
