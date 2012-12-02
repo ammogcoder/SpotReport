@@ -18,6 +18,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
+import android.sax.StartElementListener;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -106,13 +107,22 @@ public class BluMoteHandler extends Handler {
       
       // for now we support 4 buttons
       if (cmd.startsWith("1")) {
-         emergencyCall();
+         //emergencyCall();
+         Intent i = new Intent(context, Emergency.class);
+         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+         context.startActivity(i);
       } else if (cmd.startsWith("2")) {
-         soundAlarm(context);
+         //soundAlarm(context);
+         Intent i = new Intent(context, Crime.class);
+         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+         context.startActivity(i);
       } else if (cmd.startsWith("3")) {
-         recordAudio(context);
+         //recordAudio(context);
+         Intent i = new Intent(context, Suspicious.class);
+         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+         context.startActivity(i);
       } else if (cmd.startsWith("4")) {
-         shacOpenDoor();
+         //shacOpenDoor();
       }
    }
 
