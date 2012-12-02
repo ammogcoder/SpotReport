@@ -5,6 +5,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
+import za.co.house4hack.ushahidi.Report;
+import za.co.house4hack.ushahidi.ServiceConstants;
+import za.co.house4hack.ushahidi.UshahidiConnection;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -89,6 +93,36 @@ public class Main extends Activity {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.main);
 
+      //test code for ushahidi connection
+      Report r = new Report();
+      r.setIncident_title("test 1");
+      r.setIncident_ampm("am");
+      r.setIncident_date("01/12/2012");
+      r.setIncident_hour("11");
+      r.setIncident_minute("21");
+      r.setIncident_category("1");
+      r.setIncident_description("hijacking me now");
+      r.setLatitude("-28");
+      r.setLongitude("32");
+      r.setLocation_name("unknown");
+      
+      try
+      {
+    	  String s1 = r.toJsonString();
+    	  Log.i("json string", s1);
+    	  UshahidiConnection conn = UshahidiConnection.instanceOfJsonPOSTMethod(ServiceConstants.send_report, s1, r.toFormData());
+    	  Log.i("Ushahidi connection", "created");
+    	  String s = conn.getResponse();
+    	  Log.i("sending a report", s);
+      }
+      catch (Exception ex)
+      {
+    	  Log.e("MAIN", "Connecting to Ushahidi: " + ex.getMessage(), ex);
+      }
+      
+      //commented out by Donovan
+      /**
+      
       // Get local Bluetooth adapter
       mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -100,6 +134,7 @@ public class Main extends Activity {
       }
       
       if (mService == null) doBindService();
+      **/
    }
 
    @Override
