@@ -29,12 +29,28 @@ public abstract class BaseButtonActivity extends Activity implements SurfaceHold
       mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
       Toast.makeText(this, "Button " + getButtonName() + " pressed", Toast.LENGTH_LONG).show();
+   }
+
+   @Override
+   protected void onStart() {
+      super.onStop();
+      startVideoRecord();
+      startPhotoRecord();
+      startVoiceRecord();
+   }
+   
+   private void startVoiceRecord() {
+      BluMoteHandler.recordAudio(this);
+   }
+
+   private void startPhotoRecord() {
       
+   }
+
+   public void startVideoRecord() {
       Intent intent = new Intent(this, VideoRecordService.class);
       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
       startService(intent);
-      
-      finish();
    }
 
    public Location getBestLastKnownLoaction(Context context) {
