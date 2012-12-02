@@ -35,6 +35,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * This class does all the work for setting up and managing Bluetooth
@@ -146,6 +147,13 @@ public class BluetoothService extends Service {
       start();
    }
 
+   @Override
+   public int onStartCommand(Intent intent, int flags, int startId) {
+      Toast.makeText(this, "Incident report uploading", Toast.LENGTH_SHORT).show();
+
+      return Service.START_NOT_STICKY;
+   }
+   
    /**
     * Stop all threads
     */
