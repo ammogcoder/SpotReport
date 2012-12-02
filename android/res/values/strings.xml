@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">BluMote</string>
-    <string name="app_name">BluMote</string>
+    <string name="app_name">SpotReport</string>
 
     <string name="btn_connect">Connect</string>
     <string name="btn_disconnect">Exit</string>
